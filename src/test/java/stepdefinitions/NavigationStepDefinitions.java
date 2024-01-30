@@ -8,7 +8,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -20,16 +19,14 @@ public class NavigationStepDefinitions {
     public void setUp()  {
 //        WebDriverManager.firefoxdriver().setup();
 //        driver = new FirefoxDriver();
-
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        driver = new ChromeDriver(options);
     }
 
     @Given("I have a browser open")
     public void iHaveABrowserOpen() {
-
+        WebDriverManager.chromedriver().setup();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        driver = new ChromeDriver(options);
     }
 
     @When("I navigate to {string}")
