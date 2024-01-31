@@ -26,6 +26,20 @@ public class AlertStepDefs {
 
     @When("I click on the {string} button")
     public void i_click_on_the_button(String buttonName) {
+        List<WebElement> inputElements =  StaticUtils.webDriver.findElements(By.cssSelector("input"));
+
+        boolean foundSendButton = false;
+        for(WebElement element: inputElements) {
+            String role = element.getAriaRole();
+            if(role.equalsIgnoreCase("button")) {
+                if(element.getAttribute("value").equalsIgnoreCase(buttonName)) {
+                    foundSendButton = true;
+                    element.click();
+                }
+            }
+        }
+        if(!foundSendButton)
+            throw new RuntimeException("No button found with name: " + buttonName);
 
     }
     @Then("an alert window appears")

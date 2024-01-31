@@ -76,7 +76,6 @@ public class CarServiceTest {
 
         TruckService truckService;
 
-
         actualResult = uut.getCheapestVehicle();
 
         Truck cheapestTruck = ServiceTestUtility.getListOfTrucks().get(2);
