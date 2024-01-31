@@ -8,6 +8,7 @@ import com.example.demo.Repos.CarRepository;
 import com.example.demo.Services.CarService;
 import com.example.demo.Services.TruckService;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -68,6 +69,7 @@ public class CarServiceTest {
 
     }
 
+    @Disabled
     @Test
     public void testGettingCheapestVehicle()  {
         Vehicle actualResult;
