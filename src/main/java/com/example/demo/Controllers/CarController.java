@@ -2,7 +2,6 @@ package com.example.demo.Controllers;
 
 import com.example.demo.Model.Car;
 import com.example.demo.Model.Manufacturer;
-import com.example.demo.Model.Truck;
 import com.example.demo.Model.Vehicle;
 import com.example.demo.Services.CarService;
 import org.springframework.beans.factory.annotation.Autowired;

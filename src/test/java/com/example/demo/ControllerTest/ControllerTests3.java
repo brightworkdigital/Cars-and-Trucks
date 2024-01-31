@@ -3,7 +3,6 @@ package com.example.demo.ControllerTest;
 import com.example.demo.Controllers.CarController;
 import com.example.demo.Model.Car;
 import com.example.demo.Model.Manufacturer;
-import com.example.demo.Model.Truck;
 import com.example.demo.Services.CarService;
 import com.example.demo.Services.TruckService;
 import org.junit.jupiter.api.Test;
@@ -13,13 +12,10 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultMatcher;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import static org.springframework.web.servlet.function.RequestPredicates.contentType;
 
 @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
 @WebMvcTest(CarController.class)

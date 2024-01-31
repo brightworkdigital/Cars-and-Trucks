@@ -5,7 +5,6 @@ import com.example.demo.Model.Manufacturer;
 import com.example.demo.Model.Truck;
 import com.example.demo.Model.Vehicle;
 import com.example.demo.Repos.CarRepository;
-import com.example.demo.Repos.TruckRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

@@ -1,6 +1,6 @@
 package stepdefinitions;
 
-import io.cucumber.java.Before;
+import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -14,12 +14,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class NavigationStepDefinitions {
 
     WebDriver driver;
-
-    @Before
-    public void setUp()  {
-//        WebDriverManager.firefoxdriver().setup();
-//        driver = new FirefoxDriver();
-    }
 
     @Given("I have a browser open")
     public void iHaveABrowserOpen() {
@@ -39,4 +33,11 @@ public class NavigationStepDefinitions {
         String tabTitle = driver.getTitle();
         assertTrue(tabTitle.contains(pageTitle));
     }
+
+    @After
+    public void afterAll() {
+        if(driver.toString() != null)
+            this.driver.quit();
+    }
+
 }

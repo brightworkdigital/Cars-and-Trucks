@@ -2,7 +2,6 @@ package com.example.demo.ControllerTest;
 
 
 import com.example.demo.Controllers.TruckController;
-import com.example.demo.Model.Car;
 import com.example.demo.Model.Manufacturer;
 import com.example.demo.Model.Truck;
 import com.example.demo.Services.TruckService;
@@ -18,6 +17,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
