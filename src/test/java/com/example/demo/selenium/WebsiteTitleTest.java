@@ -2,11 +2,14 @@ package com.example.demo.selenium;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.util.List;
+
 
 public class WebsiteTitleTest {
 
@@ -20,13 +23,19 @@ public class WebsiteTitleTest {
 
         try {
             // Navigate to the desired web page
-            driver.get("https://home.barclays/");
+            driver.get("https://www.thetestroom.com/webapp/adoption.html");
 
-            // Get the title of the web page
-            String title = driver.getTitle();
+            boolean animalFound = false;
+            List<WebElement> elements = driver.findElements(By.className("record"));
+            for (WebElement element : elements) {
+                String elementText = element.getText();
+                System.out.println(elementText);
+                if(elementText.contains("Lion")) {
+                    animalFound = true;
+                }
+            }
 
-            // Assert that the title is what we expect
-            assertEquals("Barclays | Official Website", title);
+            if(!animalFound) throw new RuntimeException("No animal to adopt");
 
             // Your test logic here
         } finally {
