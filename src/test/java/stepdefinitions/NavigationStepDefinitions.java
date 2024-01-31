@@ -36,6 +36,8 @@ public class NavigationStepDefinitions {
 
     @After
     public void afterAll() {
+        if(driver == null )
+            return;
         if(driver.toString() != null)
             this.driver.quit();
     }
